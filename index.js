@@ -117,12 +117,27 @@ Baby.prototype.play = function() {
 /* 
   TASK 4
 
-  In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
-*/
+  In your own words explain the four principles of the `this` keyword below:
+  
+  1. Window/Global Object Binding
+  
+  When invoked in the global scope, i.e., not bound to any other object, the `this` keyword refers to the `window` object in the browser and the `global` object in Node.
+
+  2. Implicit Binding
+
+  When calling a method on an object, `this` refers to the object preceding the dot before the method invocation. For example, when calling `foo.bar()` the value of `this` is `foo`. Arrow functions, however, are not implicitly bound, so if `foo.baz()` is an arrow function, `this` does not refer to `foo`.
+
+  3. New Binding
+
+  The `new` keyword creates and returns a new object from a constructor function, ignoring any value returned from the function body with the `return` keyword. `this` refers to the new object created from a constructor function. The new object is unique, existing in its own slot in memory.
+  
+  4. Explicit Binding
+
+  The `call` and `apply` methods, when invoked on a function will explicitly bind the `this` parameter passed in as an argument, allowing us to override an object's implicitly bound `this` to any object.
+
+  For example: https://jsbin.com/boheduy/edit?js,console
+
+  */
 
 ///////// END OF CHALLENGE /////////
 ///////// END OF CHALLENGE /////////
